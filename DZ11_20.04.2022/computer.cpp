@@ -12,6 +12,12 @@ bool Monitor::getis_on() const
 	return power_;
 }
 
+Monitor::~Monitor()
+{
+	
+}
+
+
 Keyboard::Keyboard(std::string type, bool bluetooth)
 	: type_(std::move(type)), bluetooth_(bluetooth)
 {
@@ -22,7 +28,7 @@ Keyboard::~Keyboard()
 
 
 Laptop::Laptop(int diagonal, std::string resolution, int power, std::string type, bool bluetooth) :
-Monitor(diagonal, std::move(resolution),power), Keyboard(std::move(type), bluetooth)
+	Monitor(diagonal, std::move(resolution), power), Keyboard(std::move(type), bluetooth)
 {
 
 }
@@ -44,7 +50,7 @@ Laptop::~Laptop()
 = default;
 
 Phone::Phone(int diagonal, std::string resolution, int power, std::string type, bool bluetooth) :
-Monitor(diagonal, std::move(resolution),power), Keyboard(std::move(type), bluetooth)
+	Monitor(diagonal, std::move(resolution), power), Keyboard(std::move(type), bluetooth)
 {
 
 }
@@ -67,7 +73,7 @@ Phone::~Phone()
 
 
 PersonalComputer::PersonalComputer(int diagonal, std::string resolution, int power, std::string type, bool bluetooth) :
-Monitor(diagonal,std::move(resolution), power), Keyboard(std::move(type), bluetooth)
+	Monitor(diagonal, std::move(resolution), power), Keyboard(std::move(type), bluetooth)
 {
 
 }
